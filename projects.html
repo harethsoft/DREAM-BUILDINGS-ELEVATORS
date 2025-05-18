@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاريعنا - مباني الأحلام | فرع المصاعد</title>
+    <!-- روابط CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* تنسيقات خاصة بصفحة المشاريع */
+        .projects-page {
+            background: #f9f9f9;
+            padding-bottom: 60px;
+        }
+        
+        .projects-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #1a3a8f;
+            color: white;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .project-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #f7941d;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .project-location {
+            color: #666;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .project-location i {
+            margin-left: 5px;
+            color: #1a3a8f;
+        }
+        
+        .project-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .project-stats {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-weight: 700;
+            color: #1a3a8f;
+            font-size: 1.2rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="شعار شركة مباني الأحلام">
+                <h1>مباني الأحلام <span>للتطوير العقاري</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="products.html">منتجاتنا</a></li>
+                    <li><a href="services.html">خدماتنا</a></li>
+                    <li><a href="projects.html" class="active">مشاريعنا</a></li>
+                    <li><a href="news.html">الأخبار</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوى الصفحة -->
+    <main class="projects-page">
+        <!-- بانر الصفحة -->
+        <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/projects-banner.jpg');">
+            <div class="container">
+                <h1>مشاريعنا</h1>
+                <nav aria-label="breadcrumb">
+                    <ol>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li>مشاريعنا</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- قسم المشاريع -->
+        <section class="projects-section">
+            <div class="container">
+                <div class="projects-header">
+                    <h2>أبرز مشاريعنا التنفيذية</h2>
+                    <p>اكتشف مجموعة من أبرز المشاريع التي نفذناها بتقنيات متطورة وجودة عالية</p>
+                </div>
+                
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">الكل</button>
+                    <button class="filter-btn" data-filter="commercial">تجارية</button>
+                    <button class="filter-btn" data-filter="residential">سكنية</button>
+                    <button class="filter-btn" data-filter="government">حكومية</button>
+                    <button class="filter-btn" data-filter="hotels">فنادق</button>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- مشروع 1 -->
+                    <div class="project-card" data-category="commercial">
+                        <div class="project-image">
+                            <img src="images/project-1.jpg" alt="برج الأعمال الدولي">
+                            <span class="project-badge">مكتمل</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">برج الأعمال الدولي</h3>
+                            <div class="project-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                الرياض، المروج
+                            </div>
+                            <p class="project-description">
+                                تنفيذ نظام متكامل للمصاعد الفائقة السرعة (12 مصعد) بمواصفات أوروبية لمبنى مكون من 40 طابقاً.
+                            </p>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">12</div>
+                                    <div class="stat-label">مصعد</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">40</div>
+                                    <div class="stat-label">طابق</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">2023</div>
+                                    <div class="stat-label">سنة التنفيذ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- مشروع 2 -->
+                    <div class="project-card" data-category="residential">
+                        <div class="project-image">
+                            <img src="images/project-2.jpg" alt="مجمع السكني الفاخر">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">مجمع السكني الفاخر</h3>
+                            <div class="project-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                جدة، الكورنيش
+                            </div>
+                            <p class="project-description">
+                                تركيب مصاعد منزلية فاخرة لـ 20 فيلا بتصاميم داخلية مخصصة ومواد عالية الجودة.
+                            </p>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">20</div>
+                                    <div class="stat-label">مصعد</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">6</div>
+                                    <div class="stat-label">طوابق</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">2022</div>
+                                    <div class="stat-label">سنة التنفيذ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- مشروع 3 -->
+                    <div class="project-card" data-category="government">
+                        <div class="project-image">
+                            <img src="images/project-3.jpg" alt="المستشفى التخصصي">
+                            <span class="project-badge">جائزة التميز</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">المستشفى التخصصي</h3>
+                            <div class="project-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                الرياض، العليا
+                            </div>
+                            <p class="project-description">
+                                نظام متكامل للمصاعد الطبية والخدمية لمستشفى مكون من 15 طابقاً مع أنظمة طوارئ متطورة.
+                            </p>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">8</div>
+                                    <div class="stat-label">مصعد طبي</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">15</div>
+                                    <div class="stat-label">طابق</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">2021</div>
+                                    <div class="stat-label">سنة التنفيذ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- مشروع 4 -->
+                    <div class="project-card" data-category="commercial">
+                        <div class="project-image">
+                            <img src="images/project-4.jpg" alt="مول المدينة">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">مول المدينة</h3>
+                            <div class="project-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                الدمام، المركز
+                            </div>
+                            <p class="project-description">
+                                تصميم وتنفيذ نظام متكامل للسلالم الكهربائية والمشيات المتحركة لأكبر مجمع تجاري في المنطقة الشرقية.
+                            </p>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">24</div>
+                                    <div class="stat-label">سلم كهربائي</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">5</div>
+                                    <div class="stat-label">مشيات متحركة</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">2020</div>
+                                    <div class="stat-label">سنة التنفيذ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- مشروع 5 -->
+                    <div class="project-card" data-category="hotels">
+                        <div class="project-image">
+                            <img src="images/project-5.jpg" alt="فندق جراند بلازا">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">فندق جراند بلازا</h3>
+                            <div class="project-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                مكة المكرمة
+                            </div>
+                            <p class="project-description">
+                                تركيب مصاعد زجاجية بانورامية فاخرة مع أنظمة تحكم ذكية لفندق 5 نجوم بالقرب من الحرم المكي.
+                            </p>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">6</div>
+                                    <div class="stat-label">مصاعد بانورامية</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">30</div>
+                                    <div class="stat-label">طابق</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">2019</div>
+                                    <div class="stat-label">سنة التنفيذ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- مشروع 6 -->
+                    <div class="project-card" data-category="government">
+                        <div class="project-image">
+                            <img src="images/project-6.jpg" alt="مطار الملك خالد">
+                            <span class="project-badge">الأكبر</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">مطار الملك خالد</h3>
+                            <div class="project-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                الرياض
+                            </div>
+                            <p class="project-description">
+                                تنفيذ نظام متكامل للمشيات المتحركة والسلالم الكهربائية لمبنى الركاب الجديد في المطار.
+                            </p>
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">18</div>
+                                    <div class="stat-label">مشية متحركة</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">12</div>
+                                    <div class="stat-label">سلم كهربائي</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">2018</div>
+                                    <div class="stat-label">سنة التنفيذ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ترقيم الصفحات -->
+                <div class="pagination">
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#"><i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-white.png" alt="شعار شركة مباني الأحلام">
+                    <h3>مباني الأحلام <span>للتطوير العقاري</span></h3>
+                    <p>شركة رائدة في مجال المصاعد والسلالم الكهربائية وحلول النقل الرأسي</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="products.html">منتجاتنا</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> الرياض، حي المروج، شارع الملك فهد</li>
+                        <li><i class="fas fa-phone"></i> +966 11 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@dream-buildings.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; <span id="year"></span> جميع الحقوق محفوظة لشركة مباني الأحلام للتطوير العقاري</p>
+        </div>
+    </footer>
+
+    <!-- روابط JS -->
+    <script src="js/script.js"></script>
+    <script>
+        // تصفية المشاريع حسب النوع
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // إزالة التنشيط من جميع الأزرار
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // تفعيل الزر المحدد
+                    this.classList.add('active');
+                    
+                    const filter = this.dataset.filter;
+                    
+                    // تصفية المشاريع
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // سنة حقوق النشر التلقائية
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

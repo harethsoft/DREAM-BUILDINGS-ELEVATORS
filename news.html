@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأخبار - مباني الأحلام | فرع المصاعد</title>
+    <!-- روابط CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* تنسيقات خاصة بصفحة الأخبار */
+        .news-page {
+            background: #f9f9f9;
+            padding-bottom: 50px;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .news-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .news-card:hover .news-image img {
+            transform: scale(1.05);
+        }
+        
+        .news-content {
+            padding: 25px;
+        }
+        
+        .news-date {
+            background: #1a3a8f;
+            color: white;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .news-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .news-excerpt {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            color: #1a3a8f;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .read-more i {
+            margin-right: 5px;
+            transition: margin 0.3s;
+        }
+        
+        .read-more:hover i {
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="شعار شركة مباني الأحلام">
+                <h1>مباني الأحلام <span>للتطوير العقاري</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="products.html">منتجاتنا</a></li>
+                    <li><a href="services.html">خدماتنا</a></li>
+                    <li><a href="projects.html">مشاريعنا</a></li>
+                    <li><a href="news.html" class="active">الأخبار</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوى الصفحة -->
+    <main class="news-page">
+        <!-- بانر الصفحة -->
+        <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/news-banner.jpg');">
+            <div class="container">
+                <h1>أخبار الشركة</h1>
+                <nav aria-label="breadcrumb">
+                    <ol>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li>الأخبار</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- قسم الأخبار -->
+        <section class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>آخر الأخبار والتحديثات</h2>
+                    <p>تابع أحدث أخبارنا وإنجازاتنا في عالم المصاعد والسلالم الكهربائية</p>
+                </div>
+                
+                <div class="news-grid">
+                    <!-- خبر 1 -->
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="images/news1.jpg" alt="افتتاح فرع جديد">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date">15 يونيو 2023</span>
+                            <h3 class="news-title">افتتاح فرع جديد في مدينة جدة</h3>
+                            <p class="news-excerpt">بفخر نعلن عن افتتاح فرعنا الجديد في جدة لتقديم خدماتنا في منطقة مكة المكرمة بأحدث تقنيات المصاعد الذكية.</p>
+                            <a href="news/opening-jeddah.html" class="read-more">
+                                <i class="fas fa-arrow-left"></i> اقرأ المزيد
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- خبر 2 -->
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="images/news2.jpg" alt="جائزة التميز">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date">2 مايو 2023</span>
+                            <h3 class="news-title">فوزنا بجائزة التميز في صناعة المصاعد</h3>
+                            <p class="news-excerpt">حصلت شركة مباني الأحلام على جائزة التميز لأفضل مصنع مصاعد في المنطقة للعام الثالث على التوالي.</p>
+                            <a href="news/award-2023.html" class="read-more">
+                                <i class="fas fa-arrow-left"></i> اقرأ المزيد
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- خبر 3 -->
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="images/news3.jpg" alt="إطلاق منتج جديد">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date">20 أبريل 2023</span>
+                            <h3 class="news-title">إطلاق الجيل الجديد من المصاعد الذكية</h3>
+                            <p class="news-excerpt">أطلقت الشركة الجيل الثالث من المصاعد الذكية التي تعمل بتقنية الذكاء الاصطناعي وتتكامل مع أنظمة المباني الذكية.</p>
+                            <a href="news/new-elevators.html" class="read-more">
+                                <i class="fas fa-arrow-left"></i> اقرأ المزيد
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- خبر 4 -->
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="images/news4.jpg" alt="اتفاقية شراكة">
+                        </div>
+                        <div class="news-content">
+                            <span class="news-date">5 مارس 2023</span>
+                            <h3 class="news-title">توقيع اتفاقية مع شركة ألمانية رائدة</h3>
+                            <p class="news-excerpt">وقعت الشركة اتفاقية شراكة استراتيجية مع الشركة الألمانية الرائدة في مجال تقنيات المصاعد.</p>
+                            <a href="news/partnership.html" class="read-more">
+                                <i class="fas fa-arrow-left"></i> اقرأ المزيد
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ترقيم الصفحات -->
+                <div class="pagination">
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#"><i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-white.png" alt="شعار شركة مباني الأحلام">
+                    <h3>مباني الأحلام <span>للتطوير العقاري</span></h3>
+                    <p>شركة رائدة في مجال المصاعد والسلالم الكهربائية وحلول النقل الرأسي</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="products.html">منتجاتنا</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> الرياض، حي المروج، شارع الملك فهد</li>
+                        <li><i class="fas fa-phone"></i> +966 11 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@dream-buildings.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; <span id="year"></span> جميع الحقوق محفوظة لشركة مباني الأحلام للتطوير العقاري</p>
+        </div>
+    </footer>
+
+    <!-- روابط JS -->
+    <script src="js/script.js"></script>
+    <script>
+        // سنة حقوق النشر التلقائية
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // تأثيرات التمرير
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsCards = document.querySelectorAll('.news-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            newsCards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

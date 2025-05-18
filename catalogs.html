@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كتالوجات المنتجات | شركة مباني الأحلام</title>
+    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* أنماط مخصصة للكتالوجات */
+        .catalogs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .catalog-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .catalog-card:hover {
+            transform: translateY(-5px);
+        }
+        .catalog-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        .catalog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .catalog-info {
+            padding: 20px;
+        }
+        .download-btn {
+            display: inline-block;
+            background: #2a5ea6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر المطابق للصفحة الرئيسية -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="شعار الشركة">
+                <h1>مباني الأحلام <span>للتطوير العقاري فرع المصاعد</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li class="dropdown">
+                        <a href="products.html">منتجاتنا <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products\elevators.html">المصاعد</a></li>
+                            <li><a href="products\escalators.html">سلالم كهربائية</a></li>
+                            <li><a href="products\walkways.html">مشيات كهربائية</a></li>
+                            <li><a href="products\food-elevators.html">مصاعد طعام</a></li>
+                            <li><a href="products\car-elevators.html">مصاعد سيارات</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="services.html" class="active">خدماتنا <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services/installation.html">التركيب</a></li>
+                            <li><a href="services/maintenance.html">الصيانة</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="catalogs.html" class="active">كتالوجات المنتجات</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- محتوى الصفحة -->
+    <main class="container">
+	 
+        <h1 class="page-title">كتالوجات المنتجات</h1>
+      
+        <div class="catalogs-container">
+		
+            <!-- كتالوج 1 -->
+            <div class="catalog-card">
+                <div class="catalog-img">
+                    <img src="images/catalog-elevators.jpg" alt="كتالوج المصاعد">
+                </div>
+                <div class="catalog-info">
+                    <h2>كتالوج المصاعد</h2>
+                    <p>يشمل جميع موديلات المصاعد الحديثة بمواصفاتها الفنية</p>
+                    <a href="downloads/elevators-catalog.pdf" class="download-btn" download>
+                        <i class="fas fa-download"></i> تحميل الكتالوج
+                    </a>
+                </div>
+            </div>
+            
+            <!-- كتالوج 2 -->
+            <div class="catalog-card">
+                <div class="catalog-img">
+                    <img src="images/catalog-escalators.jpg" alt="كتالوج السلالم الكهربائية">
+                </div>
+                <div class="catalog-info">
+                    <h2>كتالوج السلالم الكهربائية</h2>
+                    <p>أحدث تصميمات السلالم المتحركة للمجمعات التجارية</p>
+                    <a href="../downloads/escalators-catalog.pdf" class="download-btn" download>
+                        <i class="fas fa-download"></i> تحميل الكتالوج
+                    </a>
+                </div>
+            </div>
+            
+            <!-- كتالوج 3 -->
+            <div class="catalog-card">
+                <div class="catalog-img">
+                    <img src="images/catalog-car-elevators.jpg" alt="كتالوج مصاعد السيارات">
+                </div>
+                <div class="catalog-info">
+                    <h2>كتالوج مصاعد السيارات</h2>
+                    <p>حلول متكاملة للمواقف الذكية والأبراج السكنية</p>
+                    <a href="../downloads/car-elevators-catalog.pdf" class="download-btn" download>
+                        <i class="fas fa-download"></i> تحميل الكتالوج
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- الفوتر المطابق للصفحة الرئيسية -->
+     <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="شعار شركة مباني الأحلام">
+                    <h3>مباني الأحلام <span>للتطوير العقاري</span></h3>
+                    <p>شركة رائدة في مجال المصاعد والسلالم الكهربائية وحلول النقل الرأسي</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="products.html">منتجاتنا</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="projects.html">مشاريعنا</a></li>
+                        <li><a href="news.html">الأخبار</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>خدماتنا</h4>
+                    <ul>
+                        <li><a href="services/installation.html">تركيب المصاعد</a></li>
+                        <li><a href="services/maintenance.html">صيانة المصاعد</a></li>
+                        <li><a href="services/custom-solutions.html">حلول مخصصة</a></li>
+                        <li><a href="services/consulting.html">استشارات هندسية</a></li>
+                        <li><a href="services/training.html">تدريب العاملين</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> مكه</li>
+                        <li><i class="fas fa-phone"></i> +966 11 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@asiafujiksa</li>
+                        <li><i class="fas fa-clock"></i> الأحد - الخميس: 8 ص - 5 م</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2023 جميع الحقوق محفوظة لشركة مباني الأحلام للتطوير العقاري</p>
+                <div class="footer-nav">
+                    <a href="privacy.html">سياسة الخصوصية</a>
+                    <a href="terms.html">شروط الاستخدام</a>
+                    <a href="sitemap.html">خريطة الموقع</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

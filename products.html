@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منتجاتنا - مباني الأحلام | فرع المصاعد</title>
+    <!-- روابط CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* تنسيقات خاصة بصفحة المنتجات */
+        .products-page {
+            background: #f9f9f9;
+            padding-bottom: 60px;
+        }
+        
+        .products-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .products-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .category-btn {
+            padding: 10px 25px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .category-btn.active,
+        .category-btn:hover {
+            background: #1a3a8f;
+            color: white;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #f7941d;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .product-content {
+            padding: 25px;
+        }
+        
+        .product-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .product-features {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .product-features li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-right: 20px;
+        }
+        
+        .product-features li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            color: #1a3a8f;
+        }
+        
+        .product-cta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .product-price {
+            font-weight: 700;
+            color: #1a3a8f;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="شعار شركة مباني الأحلام">
+                <h1>مباني الأحلام <span>للتطوير العقاري</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="products.html" class="active">منتجاتنا</a></li>
+                    <li><a href="services.html">خدماتنا</a></li>
+                    <li><a href="projects.html">مشاريعنا</a></li>
+                    <li><a href="news.html">الأخبار</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوى الصفحة -->
+    <main class="products-page">
+        <!-- بانر الصفحة -->
+        <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/products-banner.jpg');">
+            <div class="container">
+                <h1>منتجاتنا</h1>
+                <nav aria-label="breadcrumb">
+                    <ol>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li>منتجاتنا</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- قسم المنتجات -->
+        <section class="products-section">
+            <div class="container">
+                <div class="products-header">
+                    <h2>حلول متكاملة للمصاعد والسلالم الكهربائية</h2>
+                    <p>نقدم أحدث التقنيات في مجال المصاعد والسلالم الكهربائية بجودة عالية وتصاميم مبتكرة</p>
+                </div>
+                
+                <div class="products-categories">
+                    <button class="category-btn active" data-category="all">الكل</button>
+                    <button class="category-btn" data-category="elevators">المصاعد</button>
+                    <button class="category-btn" data-category="escalators">سلالم كهربائية</button>
+                    <button class="category-btn" data-category="walkways">مشيات كهربائية</button>
+                    <button class="category-btn" data-category="special">مصاعد خاصة</button>
+                </div>
+                
+                <div class="products-grid">
+                    <!-- منتج 1 -->
+                    <div class="product-card" data-category="elevators">
+                        <div class="product-image">
+                            <img src="images/elevator-1.jpg" alt="مصعد ركاب فاخر">
+                            <span class="product-badge">الأكثر مبيعاً</span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">مصعد ركاب فاخر</h3>
+                            <ul class="product-features">
+                                <li>سعة تصل إلى 20 شخص</li>
+                                <li>سرعة تصل إلى 2.5 م/ث</li>
+                                <li>تصميم داخلي قابل للتخصيص</li>
+                                <li>نظام أمان متطور</li>
+                            </ul>
+                            <div class="product-cta">
+                                <span class="product-price">بدءًا من 250,000 ر.س</span>
+                                <a href="products/elevators/passenger.html" class="btn">تفاصيل المنتج</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- منتج 2 -->
+                    <div class="product-card" data-category="elevators">
+                        <div class="product-image">
+                            <img src="images/elevator-2.jpg" alt="مصعد منزلي">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">مصعد منزلي</h3>
+                            <ul class="product-features">
+                                <li>مثالي للفلل والقصور</li>
+                                <li>تشغيل صامت</li>
+                                <li>توفير في الطاقة</li>
+                                <li>تصاميم عصرية</li>
+                            </ul>
+                            <div class="product-cta">
+                                <span class="product-price">بدءًا من 180,000 ر.س</span>
+                                <a href="products/elevators/home.html" class="btn">تفاصيل المنتج</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- منتج 3 -->
+                    <div class="product-card" data-category="escalators">
+                        <div class="product-image">
+                            <img src="images/escalator-1.jpg" alt="سلم كهربائي">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">سلم كهربائي</h3>
+                            <ul class="product-features">
+                                <li>مناسب للمجمعات التجارية</li>
+                                <li>عرض 1000 مم أو 1200 مم</li>
+                                <li>زوايا مختلفة (30°, 35°)</li>
+                                <li>إضاءة LED مدمجة</li>
+                            </ul>
+                            <div class="product-cta">
+                                <span class="product-price">بدءًا من 350,000 ر.س</span>
+                                <a href="products/escalators/standard.html" class="btn">تفاصيل المنتج</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- منتج 4 -->
+                    <div class="product-card" data-category="walkways">
+                        <div class="product-image">
+                            <img src="images/walkway-1.jpg" alt="مشاية كهربائية">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">مشاية كهربائية</h3>
+                            <ul class="product-features">
+                                <li>للمطارات والمجمعات الكبرى</li>
+                                <li>طول يصل إلى 100 متر</li>
+                                <li>سرعة 0.5 - 0.65 م/ث</li>
+                                <li>تشغيل بدون صيانة</li>
+                            </ul>
+                            <div class="product-cta">
+                                <span class="product-price">بدءًا من 500,000 ر.س</span>
+                                <a href="products/walkways/standard.html" class="btn">تفاصيل المنتج</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- منتج 5 -->
+                    <div class="product-card" data-category="special">
+                        <div class="product-image">
+                            <img src="images/special-1.jpg" alt="مصعد طعام">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">مصعد طعام</h3>
+                            <ul class="product-features">
+                                <li>للمطاعم والفنادق</li>
+                                <li>سعة تصل إلى 50 كجم</li>
+                                <li>نظام تعقيم ذاتي</li>
+                                <li>تحكم عن بعد</li>
+                            </ul>
+                            <div class="product-cta">
+                                <span class="product-price">بدءًا من 120,000 ر.س</span>
+                                <a href="products/special/food.html" class="btn">تفاصيل المنتج</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- منتج 6 -->
+                    <div class="product-card" data-category="special">
+                        <div class="product-image">
+                            <img src="images/special-2.jpg" alt="مصعد سيارات">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">مصعد سيارات</h3>
+                            <ul class="product-features">
+                                <li>للمواقف الذكية</li>
+                                <li>يحمل سيارة وزن 2 طن</li>
+                                <li>نظام تحكم آلي</li>
+                                <li>توفير مساحة 50%</li>
+                            </ul>
+                            <div class="product-cta">
+                                <span class="product-price">بدءًا من 800,000 ر.س</span>
+                                <a href="products/special/car.html" class="btn">تفاصيل المنتج</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-white.png" alt="شعار شركة مباني الأحلام">
+                    <h3>مباني الأحلام <span>للتطوير العقاري</span></h3>
+                    <p>شركة رائدة في مجال المصاعد والسلالم الكهربائية وحلول النقل الرأسي</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="products.html">منتجاتنا</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> الرياض، حي المروج، شارع الملك فهد</li>
+                        <li><i class="fas fa-phone"></i> +966 11 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@dream-buildings.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; <span id="year"></span> جميع الحقوق محفوظة لشركة مباني الأحلام للتطوير العقاري</p>
+        </div>
+    </footer>
+
+    <!-- روابط JS -->
+    <script src="js/script.js"></script>
+    <script>
+        // تصفية المنتجات حسب الفئة
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // إزالة التنشيط من جميع الأزرار
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    // تفعيل الزر المحدد
+                    this.classList.add('active');
+                    
+                    const category = this.dataset.category;
+                    
+                    // تصفية المنتجات
+                    productCards.forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // سنة حقوق النشر التلقائية
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

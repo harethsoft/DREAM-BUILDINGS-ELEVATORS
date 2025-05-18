@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - مباني الأحلام | فرع المصاعد</title>
+    <!-- روابط CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* تنسيقات إضافية خاصة بصفحة الاتصال */
+        .contact-page {
+            background: #f5f7fa;
+            padding-bottom: 50px;
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-card .icon {
+            font-size: 2rem;
+            color: #1a3a8f;
+            margin-bottom: 15px;
+        }
+        
+        .map-container {
+            margin-top: 50px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-top: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #1a3a8f;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 58, 143, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #1a3a8f;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #0d2a6e;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="شعار شركة مباني الأحلام">
+                <h1>مباني الأحلام <span>للتطوير العقاري</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="products.html">منتجاتنا</a></li>
+                    <li><a href="services.html">خدماتنا</a></li>
+                    <li><a href="projects.html">مشاريعنا</a></li>
+                    <li><a href="news.html">الأخبار</a></li>
+                    <li><a href="contact.html" class="active">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوى الصفحة -->
+    <main class="contact-page">
+        <!-- بانر الصفحة -->
+        <section class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/contact-banner.jpg');">
+            <div class="container">
+                <h1>اتصل بنا</h1>
+                <nav aria-label="breadcrumb">
+                    <ol>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li>اتصل بنا</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- معلومات الاتصال -->
+        <section class="contact-info-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>تواصل مع فريقنا</h2>
+                    <p>نحن هنا لمساعدتك في أي استفسار أو طلب خدمة</p>
+                </div>
+                
+                <div class="contact-methods">
+                    <div class="contact-card">
+                        <div class="icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>اتصل بنا</h3>
+                        <p>+966 11 123 4567</p>
+                        <p>+966 50 123 4567</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>البريد الإلكتروني</h3>
+                        <p>info@asiafujiksa.com</p>
+                        <p>info@asiafujiksa.com</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>زيارتنا</h3>
+                        <p>الرياض، حي المروج، شارع الملك فهد</p>
+                        <a href="#map" class="btn">عرض على الخريطة</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- الخريطة -->
+        <section class="map-section" id="map">
+            <div class="container">
+                <h2 class="section-title">موقعنا على الخريطة</h2>
+                <div class="map-container">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3715.8580330168597!2d39.792908585061895!3d21.356094285822007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDIxJzIxLjkiTiAzOcKwNDcnMjYuNiJF!5e0!3m2!1sar!2ssa!4v1746878381920!5m2!1sar!2ssa" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- نموذج الاتصال -->
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="contact-form-container">
+                    <h2>أرسل لنا رسالة</h2>
+                    <p>سنكون سعداء بالرد على استفساراتك خلال 24 ساعة</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">الاسم الكامل *</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">البريد الإلكتروني *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">رقم الهاتف *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">الموضوع *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected>اختر الموضوع</option>
+                                    <option value="inquiry">استفسار</option>
+                                    <option value="quote">طلب عرض سعر</option>
+                                    <option value="complaint">شكوى</option>
+                                    <option value="other">أخرى</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">الرسالة *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">إرسال الرسالة</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-white.png" alt="شعار شركة مباني الأحلام">
+                    <h3>مباني الأحلام <span>للتطوير العقاري</span></h3>
+                    <p>شركة رائدة في مجال المصاعد والسلالم الكهربائية وحلول النقل الرأسي</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="products.html">منتجاتنا</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> مكه شارع مكه </li>
+                        <li><i class="fas fa-phone"></i> +966 11 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@asiafujiksa.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; <span id="year"></span> جميع الحقوق محفوظة لشركة مباني الأحلام للتطوير العقاري</p>
+        </div>
+    </footer>
+
+    <!-- روابط JS -->
+    <script src="js/script.js"></script>
+    <script>
+        // سنة حقوق النشر التلقائية
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // إرسال النموذج
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('تم استلام رسالتك بنجاح، وسنتواصل معك قريباً!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
